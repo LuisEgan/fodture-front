@@ -30,7 +30,7 @@ const PopupHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid ${themeGet('colors.gray.500', '#f1f1f1')};
+  border-bottom: 1px solid ${themeGet('colors.gray.1000', '#f1f1f1')};
 
   @media (max-width: 766px) {
     justify-content: center;
@@ -244,13 +244,14 @@ const CheckoutButtonWrapper = styled.div`
   flex-direction: column;
   margin-top: auto;
   flex-shrink: 0;
+  padding-bottom:30px;
 `;
 
 const Title = styled.a`
   font-family: ${themeGet('fonts.body', 'Lato')};
   font-size: ${themeGet('fontSizes.base', '15')}px;
   font-weight: ${themeGet('fontWeights.bold', '700')};
-  color: ${themeGet('colors.white', '#ffffff')};
+  color: ${themeGet('colors.black', '#ffffff')};
   padding-left: 5px;
   padding-right: 10px;
 `;
@@ -268,7 +269,7 @@ const PriceBox = styled.span`
   font-family: ${themeGet('fonts.body', 'Lato')};
   font-size: ${themeGet('fontSizes.base', '15')}px;
   font-weight: ${themeGet('fontWeights.bold', '700')};
-  color: ${themeGet('colors.primary.regular', '#009e7f')};
+  color: ${themeGet('colors.black.regular', '#009e7f')};
   margin-right: 2px;
 
   @media (max-width: 767px) {

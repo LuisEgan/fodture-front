@@ -31,7 +31,7 @@ const ProductPage: NextPage = () => {
         description={`${data?.vendor?.name} Details`}
       />
       <Modal>
-        <Box position='relative' bg='gray.200' pt={[60, 89, 78]} pb={60}>
+        <Box position='relative' bg='black' pt={[60, 89, 78]} pb={60}>
           <ProductDetailsFood product={data?.vendor} />
         </Box>
       </Modal>

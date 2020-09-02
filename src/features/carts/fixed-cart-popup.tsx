@@ -22,7 +22,7 @@ const CartPopupStyle = createGlobalStyle`
       width: 100% !important;
       bottom: 0 !important;
       left: 0!important;
-      background: ${themeGet('colors.white', '#ffffff')};
+      background: ${themeGet('colors.black', '#ffffff')};
       overflow: initial !important;
       transform-origin: bottom center;
     }

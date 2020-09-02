@@ -16,6 +16,7 @@ import 'react-spring-modal/dist/index.css';
 import 'overlayscrollbars/css/OverlayScrollbars.css';
 import 'components/scrollbar/scrollbar.css';
 import '@redq/reuse-modal/lib/index.css';
+import 'react-awesome-slider/dist/styles.css';
 import 'typeface-lato';
 import 'typeface-poppins';
 import {useState} from "react";

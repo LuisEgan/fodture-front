@@ -1,9 +1,61 @@
 import styled from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
+import {themeGet} from '@styled-system/theme-get';
 import DotBG from 'assets/images/dot-bg.svg';
 
+
+export const SliderContainer = styled.div`
+  .awssld {
+    --slider-height-percentage: 40%;
+    --slider-transition-duration: 700ms;
+    --organic-arrow-thickness: 4px;
+    --organic-arrow-border-radius: 0px;
+    --organic-arrow-height: 40px;
+    --organic-arrow-color: #26456f;
+    --control-button-width: 12%;
+    --control-button-height: 35%;
+    --control-button-background: transparent;
+    --control-bullet-color: #2d5182;
+    --control-bullet-active-color: #26456f;
+    --loader-bar-color: #851515;
+    --loader-bar-height: 6px;
+}
+
+.awssld{
+  &__content {
+    p {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      transition: transform 0.45s cubic-bezier(0.15, 0.3, 0.15, 1), opacity 0.35s ease-out;
+    }
+    p:nth-child(2) {
+      transition-delay: 0.05s, 0.05s;
+    }
+    &--exit {
+      p {
+        transition: transform 0.225s cubic-bezier(0.85, 0, 0.85, 0.7), opacity 0.4s ease-out;
+      }
+      p:nth-child(2) {
+        transition-delay: 0.05s, 0.05s;
+      }
+    }
+    &--moveLeft {
+      p {
+        transform: translate3d(-50px, 0, 0);
+        opacity: 0;
+      }
+    }
+    &--moveRight {
+      p {
+        transform: translate3d(50px, 0, 0);
+        opacity: 0;
+      }
+    }
+  }
+}
+`;
+
 export const ProductDetailsWrapper = styled.div`
-  background-color: ${themeGet('colors.gray.200', '#F7F7F7')};
+  background-color: ${themeGet('colors.black', '#ffffff')};
   position: relative;
   width: 100%;
   display: flex;
@@ -50,7 +102,7 @@ export const RestaurantMeta = styled.div`
   display: flex;
   align-items: center;
   padding: 20px 60px;
-  background-color: ${themeGet('colors.white', '#ffffff')};
+  background-color: ${themeGet('colors.black2', '#ffffff')};
   @media (max-width: 990px) {
     flex-direction: column;
     align-items: flex-start;
@@ -75,7 +127,7 @@ export const RestaurantName = styled.span`
   font-family: ${themeGet('fonts.body', 'Lato')};
   font-size: ${themeGet('fontSizes.lg', '21')}px;
   font-weight: ${themeGet('fontWeights.bold', '700')};
-  color: ${themeGet('colors.blue.dark', '#161F6A')};
+  color: ${themeGet('colors.primary.regular', '#161F6A')};
   margin-bottom: 5px;
   @media (max-width: 990px) {
     font-size: ${themeGet('fontSizes.base', '15')}px;
@@ -156,8 +208,8 @@ export const CategoriesWrapper = styled.div`
   display: flex;
   padding: 0px 60px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-top: 1px solid ${themeGet('colors.gray.500', '#f1f1f1')};
-  background-color: ${themeGet('colors.white', '#ffffff')};
+  border-top: 1px solid ${themeGet('colors.gray.1000', '#f1f1f1')};
+  background-color: ${themeGet('colors.black2', '#ffffff')};
   @media (max-width: 990px) {
     padding: 0 15px;
   }
@@ -180,13 +232,16 @@ export const CategoriesInner = styled.div`
     font-family: ${themeGet('fonts.body', 'Lato')};
     font-size: ${themeGet('fontSizes.base', '15')}px;
     font-weight: ${themeGet('fontWeights.regular', '400')};
-    color: ${themeGet('colors.text.regular', '#77798C')};
+    color: ${themeGet('colors.white', '#77798C')};
     text-transform: capitalize;
     margin-right: 50px;
     cursor: pointer;
     &.active {
       font-weight: ${themeGet('fontWeights.bold', '700')};
-      color: ${themeGet('colors.blue.dark', '#161F6A')};
+      color: ${themeGet('colors.black', '#161F6A')};
+      padding:5px 15px 5px 15px;
+      border-radius:20px;
+      background-color:${themeGet('colors.primary.regular', '#009E7F')};
     }
     @media (max-width: 990px) {
       font-size: ${themeGet('fontSizes.sm', '13')}px;
@@ -199,6 +254,7 @@ export const CategoriesInner = styled.div`
 export const Categories = styled.a``;
 
 export const MainContent = styled.div`
+  background-color: ${themeGet('colors.black3', '#ffffff')};
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -216,7 +272,6 @@ export const CartWrapper = styled.div`
   flex-shrink: 0;
   .fixedCartBox {
     width: 100%;
-    box-shadow: ${themeGet('shadows.big', '0 21px 36px rgba(0, 0, 0, 0.16)')};
     /* height: 100vh; */
     .items-wrapper {
       height: calc(100vh - 385px);
@@ -235,7 +290,7 @@ export const MenuContainer = styled.div`
   margin-right: 30px;
   display: flex;
   flex-direction: column;
-  background-color: ${themeGet('colors.white', '#ffffff')};
+  background-color: ${themeGet('colors.black3', '#ffffff')};
   border-radius: ${themeGet('radii.small', '3px')};
   @media (max-width: 990px) {
     margin: 0;
@@ -245,10 +300,10 @@ export const MenuContainer = styled.div`
 export const ItemCategoryWrapper = styled.div`
   width: 100%;
   padding: 40px 0;
-  border-bottom: 1px solid ${themeGet('colors.gray.500', '#f1f1f1')};
+  border-bottom: 1px solid ${themeGet('colors.gray.1000', '#f1f1f1')};
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content:  flex-start;
   @media (max-width: 990px) {
     padding: 20px 0;
   }
@@ -258,31 +313,9 @@ export const ItemCategoryName = styled.span`
   font-family: ${themeGet('fonts.body', 'Lato')};
   font-size: ${themeGet('fontSizes.md', '19')}px;
   font-weight: ${themeGet('fontWeights.bold', '700')};
-  color: ${themeGet('colors.blue.dark', '#161F6A')};
-  padding: 0 40px;
+  color: ${themeGet('colors.primary.regular', '#161F6A')};
+  padding: 0 0px;
   position: relative;
-  &:before {
-    content: '';
-    width: 25px;
-    height: 3px;
-    display: flex;
-    align-items: center;
-    background: url('${DotBG}') no-repeat center;
-    position: absolute;
-    left: 0;
-    top: 12px;
-  }
-  &:after {
-    content: '';
-    width: 25px;
-    height: 3px;
-    display: flex;
-    align-items: center;
-    background: url('${DotBG}') no-repeat center;
-    position: absolute;
-    right: 0;
-    top: 12px;
-  }
 `;
 
 export const ItemWrapper = styled.div`
@@ -290,9 +323,9 @@ export const ItemWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${themeGet('colors.white', '#ffffff')};
-  padding: 30px 60px;
-  border-bottom: 1px solid ${themeGet('colors.gray.500', '#f1f1f1')};
+  background-color: ${themeGet('colors.black3', '#ffffff')};
+  padding: 30px 0px;
+  border-bottom: 1px solid ${themeGet('colors.gray.1000', '#f1f1f1')};
   @media (max-width: 990px) {
     padding: 20px;
   }
@@ -310,9 +343,9 @@ export const ItemNameDetails = styled.div`
 
 export const ItemName = styled.span`
   font-family: ${themeGet('fonts.body', 'Lato')};
-  font-size: ${themeGet('fontSizes.base', '15')}px;
+  font-size: ${themeGet('fontSizes.lg', '21')}px;
   font-weight: ${themeGet('fontWeights.bold', '700')};
-  color: ${themeGet('colors.blue.dark', '#161F6A')};
+  color: ${themeGet('colors.white', '#161F6A')};
   margin-bottom: 10px;
 `;
 
@@ -320,19 +353,19 @@ export const ItemDetails = styled.span`
   font-family: ${themeGet('fonts.body', 'Lato')};
   font-size: ${themeGet('fontSizes.sm', '13')}px;
   font-weight: ${themeGet('fontWeights.regular', '400')};
-  color: ${themeGet('colors.text.regular', '#77798C')};
+  color: ${themeGet('colors.gray.800', '#77798C')};
 `;
 
 export const ItemNamePricing = styled.div`
   display: flex;
   flex-shrink: 0;
-  align-items: baseline;
-  margin-right: 70px;
+  align-items: center;
+  width:140px;
   @media (max-width: 990px) {
-    margin-right: 20px;
+    width:60px;
   }
   @media (min-width: 991px) and (max-width: 1400px) {
-    margin-right: 40px;
+     width:80px;
   }
 `;
 
@@ -340,7 +373,7 @@ export const HelpText = styled.span`
   font-family: ${themeGet('fonts.body', 'Lato')};
   font-size: ${themeGet('fontSizes.sm', '13')}px;
   font-weight: ${themeGet('fontWeights.regular', '400')};
-  color: ${themeGet('colors.text.regular', '#77798C')};
+  color: ${themeGet('colors.white', '#77798C')};
   @media (max-width: 990px) {
     display: none;
   }
@@ -350,5 +383,5 @@ export const ItemPrice = styled.span`
   font-family: ${themeGet('fonts.body', 'Lato')};
   font-size: ${themeGet('fontSizes.base', '15')}px;
   font-weight: ${themeGet('fontWeights.bold', '700')};
-  color: ${themeGet('colors.blue.dark', '#161F6A')};
+  color: ${themeGet('colors.white', '#161F6A')};
 `;

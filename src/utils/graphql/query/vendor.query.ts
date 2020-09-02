@@ -22,6 +22,7 @@ export const GET_VENDOR = gql`
         type
         description
         price
+        image
       }
     }
   }
