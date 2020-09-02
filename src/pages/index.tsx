@@ -81,6 +81,7 @@ export const getStaticProps: GetStaticProps = async () => {
       limit: 15,
     },
   });
+  
   await apolloClient.query({
     query: GET_CATEGORIES,
     variables: {

@@ -1,24 +1,23 @@
-import { useMemo } from 'react';
+import { useMemo } from "react";
 import {
   ApolloClient,
   InMemoryCache,
   HttpLink,
   NormalizedCacheObject,
-} from '@apollo/client';
+} from "@apollo/client";
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined;
 
 function createIsomorphLink() {
   return new HttpLink({
-    // uri: process.env.NEXT_PUBLIC_GRAPHQL_API_ENDPOINT, // Server URL (must be absolute)
-    uri: "https://fodture.azurewebsites.net/graphql", // Server URL (must be absolute)
-    credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
+    uri: process.env.NEXT_PUBLIC_GRAPHQL_API_ENDPOINT, // Server URL (must be absolute)
+    credentials: "same-origin", // Additional fetch() options like `credentials` or `headers`
   });
 }
 
 function createApolloClient() {
   return new ApolloClient({
-    ssrMode: typeof window === 'undefined',
+    ssrMode: typeof window === "undefined",
     link: createIsomorphLink(),
     cache: new InMemoryCache({
       typePolicies: {
@@ -27,7 +26,7 @@ function createApolloClient() {
             // Reusable helper function to generate a field
             // policy for the Query.products field.
             vendors: {
-              keyArgs: ['type', 'category', 'text'],
+              keyArgs: ["getVendorsArgs"],
               merge(existing, incoming) {
                 const { items: newItems } = incoming;
                 return existing
@@ -58,7 +57,7 @@ export function initializeApollo(initialState: any = null) {
     _apolloClient.cache.restore({ ...existingCache, ...initialState });
   }
   // For SSG and SSR always create a new Apollo Client
-  if (typeof window === 'undefined') return _apolloClient;
+  if (typeof window === "undefined") return _apolloClient;
   // Create the Apollo Client once in the client
   if (!apolloClient) apolloClient = _apolloClient;
 

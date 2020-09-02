@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const GET_VENDORS = gql`
   query getVendors(
@@ -9,11 +9,13 @@ export const GET_VENDORS = gql`
     $limit: Int
   ) {
     vendors(
-      type: $type
-      text: $text
-      category: $category
-      offset: $offset
-      limit: $limit
+      getVendorsArgs: {
+        type: $type
+        text: $text
+        category: $category
+        offset: $offset
+        limit: $limit
+      }
     ) {
       items {
         id
