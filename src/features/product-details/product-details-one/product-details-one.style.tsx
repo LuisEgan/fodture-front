@@ -133,7 +133,7 @@ export const Infos = styled.span`
   font-family: ${themeGet('fonts.body', 'Lato')};
   font-size: ${themeGet('fontSizes.sm', '13')}px;
   font-weight: ${themeGet('fontWeights.bold', '700')};
-  color: ${themeGet('colors.blue.dark', '#161F6A')};
+  color: ${themeGet('colors.white', '#fff')};
 `;
 
 export const DeliveryOpt = styled.span`

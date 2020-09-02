@@ -18,10 +18,12 @@ import 'components/scrollbar/scrollbar.css';
 import '@redq/reuse-modal/lib/index.css';
 import 'typeface-lato';
 import 'typeface-poppins';
+import {useState} from "react";
 const AppLayout = dynamic(() => import('layouts/app-layout'));
 
 export default function CustomApp({ Component, pageProps }: AppProps) {
   const apolloClient = useApollo(pageProps.initialApolloState);
+  const [theme, setTheme] = useState(defaultTheme)
   return (
     <ApolloProvider client={apolloClient}>
       <ThemeProvider theme={defaultTheme}>

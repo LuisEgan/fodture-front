@@ -1,6 +1,6 @@
 const baseColor = {
   white: '#ffffff',
-  black: '#000000',
+  black: '#16161a',
   gray: {
     100: '#f9f9f9',
     200: '#F7F7F7',
@@ -13,7 +13,7 @@ const baseColor = {
     900: '#bdbdbd',
   },
   text: {
-    bold: '#0D1136', // heading color
+    bold: '#fff', // heading color
     medium: '#424561',
     regular: '#77798C', // regular text color
     light: '#909090',
@@ -21,7 +21,7 @@ const baseColor = {
   },
   transparent: 'transparent',
   primary: {
-    regular: '#009E7F', // primary color
+    regular: '#99f699', // primary color
     hover: '#019376',
     alternate: '#028489',
     light: '#b7dbdd',
@@ -163,3 +163,4 @@ export const defaultTheme = {
   // heights: [36, 40, 44, 48, 50, 54, 70, 81, 128],
   // maxWidths: [16, 32, 64, 128, 256, 512, 768, 1024, 1536],
 };
+

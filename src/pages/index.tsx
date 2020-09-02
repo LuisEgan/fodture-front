@@ -19,7 +19,7 @@ const Sidebar = dynamic(() => import('layouts/sidebar/sidebar'));
 const ProductGrid = dynamic(() =>
   import('features/product-grid/product-grid-one/product-grid-one')
 );
-const PAGE_TYPE = 'restaurant';
+const PAGE_TYPE = 'grocery';
 
 const HomePage = () => {
   const { query } = useRouter();

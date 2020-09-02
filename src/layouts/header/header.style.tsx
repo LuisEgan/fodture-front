@@ -49,7 +49,7 @@ const HeaderWrapper = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: ${themeGet('colors.white', '#ffffff')};
+  background-color: ${themeGet('colors.black', '#16161a')};
   box-shadow: ${themeGet('shadows.header', '0 1px 2px rgba(0, 0, 0, 0.06)')};
   transition: all 0.3s ease;
   &.home {
@@ -91,7 +91,7 @@ const HeaderWrapper = styled.header`
   }
 
   &.sticky {
-    background-color: ${themeGet('colors.white', '#ffffff')};
+    background-color: ${themeGet('colors.black', '#16161a')};
     position: fixed;
     box-shadow: ${themeGet('shadows.header', '0 1px 2px rgba(0, 0, 0, 0.06)')};
     padding-top: 20px;
@@ -192,7 +192,7 @@ export const HeaderRightSide = styled.div`
       font-family: ${themeGet('fonts.body', 'Lato')};
       font-size: ${themeGet('fontSizes.base', '15')}px;
       font-weight: ${themeGet('fontWeights.bold', '700')};
-      color: ${themeGet('colors.text.bold', '#0D1136')};
+      color: ${themeGet('colors.text.bold', '#fff')};
       line-height: 1.2em;
       display: block;
       transition: 0.15s ease-in-out;
